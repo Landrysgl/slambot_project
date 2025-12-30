@@ -1,8 +1,0 @@
-setup.py
-slambot_interfaces/__init__.py
-slambot_interfaces.egg-info/PKG-INFO
-slambot_interfaces.egg-info/SOURCES.txt
-slambot_interfaces.egg-info/dependency_links.txt
-slambot_interfaces.egg-info/top_level.txt
-slambot_interfaces/srv/__init__.py
-slambot_interfaces/srv/_interface.py
