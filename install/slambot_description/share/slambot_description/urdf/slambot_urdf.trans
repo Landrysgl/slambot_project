@@ -1,0 +1,26 @@
+<?xml version="1.0" ?>
+<robot name="slambot_urdf" xmlns:xacro="http://www.ros.org/wiki/xacro" >
+
+<transmission name="revolution_3_tran">
+  <type>transmission_interface/SimpleTransmission</type>
+  <joint name="revolution_3">
+    <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+  </joint>
+  <actuator name="revolution_3_actr">
+    <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+    <mechanicalReduction>1</mechanicalReduction>
+  </actuator>
+</transmission>
+
+<transmission name="revolution_5_tran">
+  <type>transmission_interface/SimpleTransmission</type>
+  <joint name="revolution_5">
+    <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+  </joint>
+  <actuator name="revolution_5_actr">
+    <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+    <mechanicalReduction>1</mechanicalReduction>
+  </actuator>
+</transmission>
+
+</robot>

@@ -1,0 +1,43 @@
+[0.018s] Invoking command in '/home/eldry/devros_ws/build/slambot_hardware': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake /home/eldry/devros_ws/src/slambot_hardware -DCMAKE_INSTALL_PREFIX=/home/eldry/devros_ws/install/slambot_hardware
+[0.222s] -- The C compiler identification is GNU 13.3.0
+[0.408s] -- The CXX compiler identification is GNU 13.3.0
+[0.432s] -- Detecting C compiler ABI info
+[0.524s] -- Detecting C compiler ABI info - done
+[0.535s] -- Check for working C compiler: /usr/bin/cc - skipped
+[0.535s] -- Detecting C compile features
+[0.536s] -- Detecting C compile features - done
+[0.551s] -- Detecting CXX compiler ABI info
+[0.650s] -- Detecting CXX compiler ABI info - done
+[0.661s] -- Check for working CXX compiler: /usr/bin/c++ - skipped
+[0.661s] -- Detecting CXX compile features
+[0.662s] -- Detecting CXX compile features - done
+[0.673s] -- Found ament_cmake: 2.5.4 (/opt/ros/jazzy/share/ament_cmake/cmake)
+[0.842s] -- Found Python3: /usr/bin/python3 (found version "3.12.3") found components: Interpreter 
+[1.028s] -- Found rclcpp: 28.1.13 (/opt/ros/jazzy/share/rclcpp/cmake)
+[1.099s] -- Found rosidl_generator_c: 4.6.6 (/opt/ros/jazzy/share/rosidl_generator_c/cmake)
+[1.124s] -- Found rosidl_generator_cpp: 4.6.6 (/opt/ros/jazzy/share/rosidl_generator_cpp/cmake)
+[1.154s] -- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+[1.184s] -- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+[1.310s] -- Found rmw_implementation_cmake: 7.3.2 (/opt/ros/jazzy/share/rmw_implementation_cmake/cmake)
+[1.316s] -- Found rmw_fastrtps_cpp: 8.4.3 (/opt/ros/jazzy/share/rmw_fastrtps_cpp/cmake)
+[1.442s] -- Found OpenSSL: /usr/lib/x86_64-linux-gnu/libcrypto.so (found version "3.0.13")  
+[1.467s] -- Found FastRTPS: /opt/ros/jazzy/include (Required is at least version "2.13") 
+[1.495s] -- Using RMW implementation 'rmw_fastrtps_cpp' as default
+[1.611s] -- Found rclcpp_lifecycle: 28.1.13 (/opt/ros/jazzy/share/rclcpp_lifecycle/cmake)
+[1.661s] -- Found hardware_interface: 4.39.2 (/opt/ros/jazzy/share/hardware_interface/cmake)
+[2.329s] -- Configuring done (2.3s)
+[2.384s] -- Generating done (0.0s)
+[2.389s] -- Build files have been written to: /home/eldry/devros_ws/build/slambot_hardware
+[2.402s] Invoked command in '/home/eldry/devros_ws/build/slambot_hardware' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake /home/eldry/devros_ws/src/slambot_hardware -DCMAKE_INSTALL_PREFIX=/home/eldry/devros_ws/install/slambot_hardware
+[2.403s] Invoking command in '/home/eldry/devros_ws/build/slambot_hardware': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --build /home/eldry/devros_ws/build/slambot_hardware -- -j4 -l4
+[2.473s] [ 50%] [32mBuilding CXX object CMakeFiles/slambot_hardware.dir/src/slambot_hardware_interface.cpp.o[0m
+[2.986s] In file included from [01m[K/home/eldry/devros_ws/src/slambot_hardware/include/slambot_hardware/slambot_hardware_interface.hpp:5[m[K,
+[2.986s]                  from [01m[K/home/eldry/devros_ws/src/slambot_hardware/src/slambot_hardware_interface.cpp:1[m[K:
+[2.986s] [01m[K/home/eldry/devros_ws/src/slambot_hardware/include/slambot_hardware/esp32_driver.hpp:7:10:[m[K [01;31m[Kfatal error: [m[Klibserial/SerialPort.h: No such file or directory
+[2.986s]     7 | #include [01;31m[K<libserial/SerialPort.h>[m[K
+[2.986s]       |          [01;31m[K^~~~~~~~~~~~~~~~~~~~~~~~[m[K
+[2.987s] compilation terminated.
+[2.988s] gmake[2]: *** [CMakeFiles/slambot_hardware.dir/build.make:76: CMakeFiles/slambot_hardware.dir/src/slambot_hardware_interface.cpp.o] Error 1
+[2.989s] gmake[1]: *** [CMakeFiles/Makefile2:137: CMakeFiles/slambot_hardware.dir/all] Error 2
+[2.989s] gmake: *** [Makefile:146: all] Error 2
+[2.991s] Invoked command in '/home/eldry/devros_ws/build/slambot_hardware' returned '2': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --build /home/eldry/devros_ws/build/slambot_hardware -- -j4 -l4

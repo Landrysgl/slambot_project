@@ -1,0 +1,11 @@
+{
+  "package_name": "slambot_interfaces",
+  "output_dir": "/home/eldry/devros_ws/build/slambot_interfaces/rosidl_generator_type_description/slambot_interfaces",
+  "idl_tuples": [
+    "/home/eldry/devros_ws/build/slambot_interfaces/rosidl_adapter/slambot_interfaces:srv/Interface.idl"
+  ],
+  "include_paths": [
+    "service_msgs:/opt/ros/jazzy/share/service_msgs",
+    "builtin_interfaces:/opt/ros/jazzy/share/builtin_interfaces"
+  ]
+}

@@ -1,0 +1,9 @@
+[0.017s] Invoking command in '/home/eldry/devros_ws/build/slambot_hardware': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --build /home/eldry/devros_ws/build/slambot_hardware -- -j4 -l4
+[0.087s] [ 50%] [32mBuilding CXX object CMakeFiles/slambot_hardware.dir/src/slambot_hardware_interface.cpp.o[0m
+[2.829s] [01m[K/home/eldry/devros_ws/src/slambot_hardware/src/slambot_hardware_interface.cpp:16:1:[m[K [01;31m[Kerror: [m[Kexpected unqualified-id before ‘[01m[K{[m[K’ token
+[2.829s]    16 | [01;31m[K{[m[K
+[2.829s]       | [01;31m[K^[m[K
+[4.316s] gmake[2]: *** [CMakeFiles/slambot_hardware.dir/build.make:76: CMakeFiles/slambot_hardware.dir/src/slambot_hardware_interface.cpp.o] Error 1
+[4.317s] gmake[1]: *** [CMakeFiles/Makefile2:137: CMakeFiles/slambot_hardware.dir/all] Error 2
+[4.317s] gmake: *** [Makefile:146: all] Error 2
+[4.320s] Invoked command in '/home/eldry/devros_ws/build/slambot_hardware' returned '2': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --build /home/eldry/devros_ws/build/slambot_hardware -- -j4 -l4

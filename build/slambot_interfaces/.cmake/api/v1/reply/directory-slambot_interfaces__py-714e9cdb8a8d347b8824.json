@@ -1,0 +1,14 @@
+{
+	"backtraceGraph" : 
+	{
+		"commands" : [],
+		"files" : [],
+		"nodes" : []
+	},
+	"installers" : [],
+	"paths" : 
+	{
+		"build" : "slambot_interfaces__py",
+		"source" : "/home/eldry/devros_ws/build/slambot_interfaces/slambot_interfaces__py"
+	}
+}

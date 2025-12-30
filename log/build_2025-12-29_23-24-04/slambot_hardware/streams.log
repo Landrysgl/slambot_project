@@ -1,0 +1,22 @@
+[0.018s] Invoking command in '/home/eldry/devros_ws/build/slambot_hardware': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --build /home/eldry/devros_ws/build/slambot_hardware -- -j4 -l4
+[0.096s] [ 50%] [32mBuilding CXX object CMakeFiles/slambot_hardware.dir/src/slambot_hardware_interface.cpp.o[0m
+[2.812s] [01m[K/home/eldry/devros_ws/src/slambot_hardware/src/slambot_hardware_interface.cpp:[m[K In function ‘[01m[Khardware_interface::CallbackReturn slambot_hardware::[01;32m[Kon_init[m[K(const hardware_interface::HardwareComponentInterfaceParams&)[m[K’:
+[2.812s] [01m[K/home/eldry/devros_ws/src/slambot_hardware/src/slambot_hardware_interface.cpp:16:53:[m[K [01;31m[Kerror: [m[Kcannot call member function ‘[01m[Kvirtual rclcpp_lifecycle::node_interfaces::LifecycleNodeInterface::CallbackReturn hardware_interface::HardwareComponentInterface::[01;32m[Kon_init[m[K(const hardware_interface::HardwareComponentInterfaceParams&)[m[K’ without object
+[2.812s]    16 |     if ([01;31m[Khardware_interface::SystemInterface::on_init(params)[m[K !=
+[2.812s]       |         [01;31m[K~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~[m[K
+[2.815s] [01m[K/home/eldry/devros_ws/src/slambot_hardware/src/slambot_hardware_interface.cpp:23:3:[m[K [01;31m[Kerror: [m[K‘[01m[Kinfo_[m[K’ was not declared in this scope
+[2.815s]    23 |   [01;31m[Kinfo_[m[K = params.hardware_info;
+[2.815s]       |   [01;31m[K^~~~~[m[K
+[2.819s] [01m[K/home/eldry/devros_ws/src/slambot_hardware/src/slambot_hardware_interface.cpp:26:3:[m[K [01;31m[Kerror: [m[K‘[01m[Kcfg_[m[K’ was not declared in this scope
+[2.819s]    26 |   [01;31m[Kcfg_[m[K.left_wheel_name = info_.hardware_parameters["left_wheel_name"];
+[2.819s]       |   [01;31m[K^~~~[m[K
+[2.823s] [01m[K/home/eldry/devros_ws/src/slambot_hardware/src/slambot_hardware_interface.cpp:35:3:[m[K [01;31m[Kerror: [m[K‘[01m[Kwheel_l_[m[K’ was not declared in this scope
+[2.823s]    35 |   [01;31m[Kwheel_l_[m[K.setup(cfg_.left_wheel_name, cfg_.enc_counts_per_rev);
+[2.824s]       |   [01;31m[K^~~~~~~~[m[K
+[2.828s] [01m[K/home/eldry/devros_ws/src/slambot_hardware/src/slambot_hardware_interface.cpp:36:3:[m[K [01;31m[Kerror: [m[K‘[01m[Kwheel_r_[m[K’ was not declared in this scope
+[2.828s]    36 |   [01;31m[Kwheel_r_[m[K.setup(cfg_.right_wheel_name, cfg_.enc_counts_per_rev);
+[2.828s]       |   [01;31m[K^~~~~~~~[m[K
+[4.330s] gmake[2]: *** [CMakeFiles/slambot_hardware.dir/build.make:76: CMakeFiles/slambot_hardware.dir/src/slambot_hardware_interface.cpp.o] Error 1
+[4.330s] gmake[1]: *** [CMakeFiles/Makefile2:137: CMakeFiles/slambot_hardware.dir/all] Error 2
+[4.331s] gmake: *** [Makefile:146: all] Error 2
+[4.333s] Invoked command in '/home/eldry/devros_ws/build/slambot_hardware' returned '2': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --build /home/eldry/devros_ws/build/slambot_hardware -- -j4 -l4

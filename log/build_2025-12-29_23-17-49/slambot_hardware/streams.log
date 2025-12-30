@@ -1,0 +1,46 @@
+[0.017s] Invoking command in '/home/eldry/devros_ws/build/slambot_hardware': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --build /home/eldry/devros_ws/build/slambot_hardware -- -j4 -l4
+[0.081s] [ 50%] [32mBuilding CXX object CMakeFiles/slambot_hardware.dir/src/slambot_hardware_interface.cpp.o[0m
+[2.762s] [01m[K/home/eldry/devros_ws/src/slambot_hardware/src/slambot_hardware_interface.cpp:[m[K In member function ‘[01m[Kvirtual hardware_interface::CallbackReturn slambot_hardware::SlambotHardwareInterface::[01;32m[Kon_init[m[K(const hardware_interface::HardwareInfo&)[m[K’:
+[2.762s] [01m[K/home/eldry/devros_ws/src/slambot_hardware/src/slambot_hardware_interface.cpp:16:53:[m[K [01;35m[Kwarning: [m[K‘[01m[Kvirtual rclcpp_lifecycle::node_interfaces::LifecycleNodeInterface::CallbackReturn hardware_interface::HardwareComponentInterface::[01;32m[Kon_init[m[K(const hardware_interface::HardwareInfo&)[m[K’ is deprecated: Use on_init(const HardwareComponentInterfaceParams & params) instead. [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wdeprecated-declarations-Wdeprecated-declarations]8;;[m[K]
+[2.762s]    16 |     if ([01;35m[Khardware_interface::SystemInterface::on_init(info)[m[K !=
+[2.762s]       |         [01;35m[K~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~[m[K
+[2.762s] In file included from [01m[K/opt/ros/jazzy/include/hardware_interface/hardware_interface/system_interface.hpp:18[m[K,
+[2.763s]                  from [01m[K/home/eldry/devros_ws/src/slambot_hardware/include/slambot_hardware/slambot_hardware_interface.hpp:4[m[K,
+[2.763s]                  from [01m[K/home/eldry/devros_ws/src/slambot_hardware/src/slambot_hardware_interface.cpp:1[m[K:
+[2.763s] [01m[K/opt/ros/jazzy/include/hardware_interface/hardware_interface/hardware_component_interface.hpp:235:26:[m[K [01;36m[Knote: [m[Kdeclared here
+[2.763s]   235 |   virtual CallbackReturn [01;36m[Kon_init[m[K(const HardwareInfo & hardware_info)
+[2.763s]       |                          [01;36m[K^~~~~~~[m[K
+[5.390s] [100%] [32m[1mLinking CXX shared library libslambot_hardware.so[0m
+[5.771s] [100%] Built target slambot_hardware
+[5.791s] Invoked command in '/home/eldry/devros_ws/build/slambot_hardware' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --build /home/eldry/devros_ws/build/slambot_hardware -- -j4 -l4
+[5.792s] Invoking command in '/home/eldry/devros_ws/build/slambot_hardware': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --install /home/eldry/devros_ws/build/slambot_hardware
+[5.802s] -- Install configuration: ""
+[5.802s] -- Installing: /home/eldry/devros_ws/install/slambot_hardware/share/slambot_hardware/slambot_hardware_interface.xml
+[5.802s] -- Installing: /home/eldry/devros_ws/install/slambot_hardware/lib/libslambot_hardware.so
+[5.803s] -- Set non-toolchain portion of runtime path of "/home/eldry/devros_ws/install/slambot_hardware/lib/libslambot_hardware.so" to ""
+[5.804s] -- Installing: /home/eldry/devros_ws/install/slambot_hardware/include/include
+[5.804s] -- Installing: /home/eldry/devros_ws/install/slambot_hardware/include/include/slambot_hardware
+[5.804s] -- Installing: /home/eldry/devros_ws/install/slambot_hardware/include/include/slambot_hardware/esp32_driver.hpp
+[5.804s] -- Installing: /home/eldry/devros_ws/install/slambot_hardware/include/include/slambot_hardware/slambot_hardware_interface.hpp
+[5.804s] -- Installing: /home/eldry/devros_ws/install/slambot_hardware/include/include/slambot_hardware/wheel.hpp
+[5.804s] -- Installing: /home/eldry/devros_ws/install/slambot_hardware/share/slambot_hardware/environment/library_path.sh
+[5.804s] -- Installing: /home/eldry/devros_ws/install/slambot_hardware/share/slambot_hardware/environment/library_path.dsv
+[5.804s] -- Installing: /home/eldry/devros_ws/install/slambot_hardware/share/ament_index/resource_index/package_run_dependencies/slambot_hardware
+[5.805s] -- Installing: /home/eldry/devros_ws/install/slambot_hardware/share/ament_index/resource_index/parent_prefix_path/slambot_hardware
+[5.805s] -- Installing: /home/eldry/devros_ws/install/slambot_hardware/share/slambot_hardware/environment/ament_prefix_path.sh
+[5.805s] -- Installing: /home/eldry/devros_ws/install/slambot_hardware/share/slambot_hardware/environment/ament_prefix_path.dsv
+[5.805s] -- Installing: /home/eldry/devros_ws/install/slambot_hardware/share/slambot_hardware/environment/path.sh
+[5.805s] -- Installing: /home/eldry/devros_ws/install/slambot_hardware/share/slambot_hardware/environment/path.dsv
+[5.805s] -- Installing: /home/eldry/devros_ws/install/slambot_hardware/share/slambot_hardware/local_setup.bash
+[5.805s] -- Installing: /home/eldry/devros_ws/install/slambot_hardware/share/slambot_hardware/local_setup.sh
+[5.806s] -- Installing: /home/eldry/devros_ws/install/slambot_hardware/share/slambot_hardware/local_setup.zsh
+[5.806s] -- Installing: /home/eldry/devros_ws/install/slambot_hardware/share/slambot_hardware/local_setup.dsv
+[5.806s] -- Installing: /home/eldry/devros_ws/install/slambot_hardware/share/slambot_hardware/package.dsv
+[5.806s] -- Installing: /home/eldry/devros_ws/install/slambot_hardware/share/ament_index/resource_index/packages/slambot_hardware
+[5.806s] -- Installing: /home/eldry/devros_ws/install/slambot_hardware/share/ament_index/resource_index/hardware_interface__pluginlib__plugin/slambot_hardware
+[5.806s] -- Installing: /home/eldry/devros_ws/install/slambot_hardware/share/slambot_hardware/cmake/ament_cmake_export_libraries-extras.cmake
+[5.806s] -- Installing: /home/eldry/devros_ws/install/slambot_hardware/share/slambot_hardware/cmake/ament_cmake_export_dependencies-extras.cmake
+[5.806s] -- Installing: /home/eldry/devros_ws/install/slambot_hardware/share/slambot_hardware/cmake/slambot_hardwareConfig.cmake
+[5.807s] -- Installing: /home/eldry/devros_ws/install/slambot_hardware/share/slambot_hardware/cmake/slambot_hardwareConfig-version.cmake
+[5.807s] -- Installing: /home/eldry/devros_ws/install/slambot_hardware/share/slambot_hardware/package.xml
+[5.808s] Invoked command in '/home/eldry/devros_ws/build/slambot_hardware' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --install /home/eldry/devros_ws/build/slambot_hardware

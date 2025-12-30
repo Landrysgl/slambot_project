@@ -1,0 +1,88 @@
+<?xml version="1.0" ?>
+<robot name="slambot_urdf" xmlns:xacro="http://www.ros.org/wiki/xacro">
+  <xacro:property name="slambot_description_share"
+                  value="$(find slambot_description)"/>
+
+  <xacro:include filename="${slambot_description_share}/urdf/materials.xacro"/>
+  <xacro:include filename="${slambot_description_share}/urdf/slambot.ros2_control.xacro"/>
+  <!-- <xacro:include filename="${slambot_bringup_share}/urdf/slambot_urdf.trans"/> -->
+  <xacro:include filename="${slambot_description_share}/urdf/slambot_urdf.gazebo"/>
+
+<link name="base_link">
+  <inertial>
+    <origin xyz="0.005119635718873044 -0.00011101592777540043 0.08162335600373799" rpy="0 0 0"/>
+    <mass value="3.0305928330495275"/>
+    <inertia ixx="0.013459" iyy="0.014737" izz="0.007942" ixy="5e-06" iyz="-2.9e-05" ixz="0.000775"/>
+  </inertial>
+  <visual>
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://slambot_description/meshes/base_link.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://slambot_description/meshes/base_link.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="Wheel2_1">
+  <inertial>
+    <origin xyz="5.0110706681968334e-05 0.013586775381185238 -3.3096813803375202e-06" rpy="0 0 0"/>
+    <mass value="0.4101915518164909"/>
+    <inertia ixx="0.000142" iyy="0.000242" izz="0.000142" ixy="-0.0" iyz="-0.0" ixz="-0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="-0.000388 -0.035625 -0.018348" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://slambot_description/meshes/Wheel2_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="-0.000388 -0.035625 -0.018348" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://slambot_description/meshes/Wheel2_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="Wheel1_1">
+  <inertial>
+    <origin xyz="3.573766185485487e-06 -0.018554660875315418 1.660531699224782e-05" rpy="0 0 0"/>
+    <mass value="0.41151121249399275"/>
+    <inertia ixx="0.000142" iyy="0.000242" izz="0.000142" ixy="0.0" iyz="-0.0" ixz="0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="-0.000387 0.036475 -0.018348" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://slambot_description/meshes/Wheel1_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="-0.000387 0.036475 -0.018348" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://slambot_description/meshes/Wheel1_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<joint name="revolution_3" type="continuous">
+  <origin xyz="0.000388 0.035625 0.018348" rpy="0 0 0"/>
+  <parent link="base_link"/>
+  <child link="Wheel2_1"/>
+  <axis xyz="0.0 -1.0 0.0"/>
+</joint>
+
+<joint name="revolution_5" type="continuous">
+  <origin xyz="0.000387 -0.036475 0.018348" rpy="0 0 0"/>
+  <parent link="base_link"/>
+  <child link="Wheel1_1"/>
+  <axis xyz="0.0 -1.0 0.0"/>
+</joint>
+
+</robot>

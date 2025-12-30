@@ -1,0 +1,61 @@
+[0.016s] Invoking command in '/home/eldry/devros_ws/build/slambot_description': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake /home/eldry/devros_ws/src/slambot_description -DCMAKE_INSTALL_PREFIX=/home/eldry/devros_ws/install/slambot_description
+[0.071s] -- The C compiler identification is GNU 13.3.0
+[0.125s] -- The CXX compiler identification is GNU 13.3.0
+[0.141s] -- Detecting C compiler ABI info
+[0.223s] -- Detecting C compiler ABI info - done
+[0.234s] -- Check for working C compiler: /usr/bin/cc - skipped
+[0.234s] -- Detecting C compile features
+[0.234s] -- Detecting C compile features - done
+[0.244s] -- Detecting CXX compiler ABI info
+[0.333s] -- Detecting CXX compiler ABI info - done
+[0.346s] -- Check for working CXX compiler: /usr/bin/c++ - skipped
+[0.346s] -- Detecting CXX compile features
+[0.346s] -- Detecting CXX compile features - done
+[0.350s] -- Found ament_cmake: 2.5.4 (/opt/ros/jazzy/share/ament_cmake/cmake)
+[0.523s] -- Found Python3: /usr/bin/python3 (found version "3.12.3") found components: Interpreter 
+[0.677s] -- Found rclcpp: 28.1.13 (/opt/ros/jazzy/share/rclcpp/cmake)
+[0.729s] -- Found rosidl_generator_c: 4.6.6 (/opt/ros/jazzy/share/rosidl_generator_c/cmake)
+[0.747s] -- Found rosidl_generator_cpp: 4.6.6 (/opt/ros/jazzy/share/rosidl_generator_cpp/cmake)
+[0.768s] -- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+[0.792s] -- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+[0.889s] -- Found rmw_implementation_cmake: 7.3.2 (/opt/ros/jazzy/share/rmw_implementation_cmake/cmake)
+[0.893s] -- Found rmw_fastrtps_cpp: 8.4.3 (/opt/ros/jazzy/share/rmw_fastrtps_cpp/cmake)
+[1.010s] -- Found OpenSSL: /usr/lib/x86_64-linux-gnu/libcrypto.so (found version "3.0.13")  
+[1.035s] -- Found FastRTPS: /opt/ros/jazzy/include (Required is at least version "2.13") 
+[1.062s] -- Using RMW implementation 'rmw_fastrtps_cpp' as default
+[1.265s] -- Configuring done (1.2s)
+[1.269s] -- Generating done (0.0s)
+[1.271s] -- Build files have been written to: /home/eldry/devros_ws/build/slambot_description
+[1.279s] Invoked command in '/home/eldry/devros_ws/build/slambot_description' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake /home/eldry/devros_ws/src/slambot_description -DCMAKE_INSTALL_PREFIX=/home/eldry/devros_ws/install/slambot_description
+[1.281s] Invoking command in '/home/eldry/devros_ws/build/slambot_description': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --build /home/eldry/devros_ws/build/slambot_description -- -j4 -l4
+[1.322s] Invoked command in '/home/eldry/devros_ws/build/slambot_description' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --build /home/eldry/devros_ws/build/slambot_description -- -j4 -l4
+[1.331s] Invoking command in '/home/eldry/devros_ws/build/slambot_description': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --install /home/eldry/devros_ws/build/slambot_description
+[1.340s] -- Install configuration: ""
+[1.340s] -- Installing: /home/eldry/devros_ws/install/slambot_description/share/slambot_description//urdf
+[1.340s] -- Installing: /home/eldry/devros_ws/install/slambot_description/share/slambot_description//urdf/slambot_urdf.gazebo
+[1.340s] -- Installing: /home/eldry/devros_ws/install/slambot_description/share/slambot_description//urdf/slambot_urdf.trans
+[1.341s] -- Installing: /home/eldry/devros_ws/install/slambot_description/share/slambot_description//urdf/slambot_urdf.xacro
+[1.341s] -- Installing: /home/eldry/devros_ws/install/slambot_description/share/slambot_description//urdf/materials.xacro
+[1.341s] -- Installing: /home/eldry/devros_ws/install/slambot_description/share/slambot_description//urdf/slambot.ros2_control.xacro
+[1.341s] -- Installing: /home/eldry/devros_ws/install/slambot_description/share/slambot_description//rviz
+[1.341s] -- Installing: /home/eldry/devros_ws/install/slambot_description/share/slambot_description//rviz/slam_config.rviz
+[1.341s] -- Installing: /home/eldry/devros_ws/install/slambot_description/share/slambot_description//meshes
+[1.341s] -- Installing: /home/eldry/devros_ws/install/slambot_description/share/slambot_description//meshes/Wheel2_1.stl
+[1.342s] -- Installing: /home/eldry/devros_ws/install/slambot_description/share/slambot_description//meshes/base_link.stl
+[1.345s] -- Installing: /home/eldry/devros_ws/install/slambot_description/share/slambot_description//meshes/Wheel1_1.stl
+[1.345s] -- Installing: /home/eldry/devros_ws/install/slambot_description/share/ament_index/resource_index/package_run_dependencies/slambot_description
+[1.345s] -- Installing: /home/eldry/devros_ws/install/slambot_description/share/ament_index/resource_index/parent_prefix_path/slambot_description
+[1.346s] -- Installing: /home/eldry/devros_ws/install/slambot_description/share/slambot_description/environment/ament_prefix_path.sh
+[1.346s] -- Installing: /home/eldry/devros_ws/install/slambot_description/share/slambot_description/environment/ament_prefix_path.dsv
+[1.346s] -- Installing: /home/eldry/devros_ws/install/slambot_description/share/slambot_description/environment/path.sh
+[1.346s] -- Installing: /home/eldry/devros_ws/install/slambot_description/share/slambot_description/environment/path.dsv
+[1.346s] -- Installing: /home/eldry/devros_ws/install/slambot_description/share/slambot_description/local_setup.bash
+[1.347s] -- Installing: /home/eldry/devros_ws/install/slambot_description/share/slambot_description/local_setup.sh
+[1.347s] -- Installing: /home/eldry/devros_ws/install/slambot_description/share/slambot_description/local_setup.zsh
+[1.347s] -- Installing: /home/eldry/devros_ws/install/slambot_description/share/slambot_description/local_setup.dsv
+[1.347s] -- Installing: /home/eldry/devros_ws/install/slambot_description/share/slambot_description/package.dsv
+[1.347s] -- Installing: /home/eldry/devros_ws/install/slambot_description/share/ament_index/resource_index/packages/slambot_description
+[1.348s] -- Installing: /home/eldry/devros_ws/install/slambot_description/share/slambot_description/cmake/slambot_descriptionConfig.cmake
+[1.348s] -- Installing: /home/eldry/devros_ws/install/slambot_description/share/slambot_description/cmake/slambot_descriptionConfig-version.cmake
+[1.348s] -- Installing: /home/eldry/devros_ws/install/slambot_description/share/slambot_description/package.xml
+[1.349s] Invoked command in '/home/eldry/devros_ws/build/slambot_description' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --install /home/eldry/devros_ws/build/slambot_description
