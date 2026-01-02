@@ -62,7 +62,6 @@ public:
     std::string response = "";
     try
     {
-      // Responses end with \n so we will read up to (and including) the \n.
       serial_conn_.ReadLine(response, '\n', timeout_ms_);
     }
     catch (const LibSerial::ReadTimeout&)

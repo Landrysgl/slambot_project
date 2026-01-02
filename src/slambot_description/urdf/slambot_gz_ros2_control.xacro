@@ -1,0 +1,39 @@
+<?xml version="1.0" ?>
+<robot name="slambot_urdf" xmlns:xacro="http://www.ros.org/wiki/xacro" >
+
+  <xacro:property name="slambot_description_share"
+                  value="$(find slambot_description)"/>
+
+  <xacro:property name="slambot_bringup_share"
+                  value="$(find slambot_bringup)"/>
+
+  <xacro:include filename="${slambot_description_share}/urdf/slambot_gz_urdf.xacro"/>
+
+
+ <ros2_control name="Slambot" type="system">
+        <hardware>
+            <plugin>gz_ros2_control/GazeboSimSystem</plugin>
+        </hardware>
+
+
+        <joint name="revolution_3">
+            <command_interface name="velocity"/>
+            <state_interface name="velocity"/>
+            <state_interface name="position"/>
+        </joint>
+        
+        
+            <joint name="revolution_5">
+            <command_interface name="velocity"/>
+            <state_interface name="velocity"/>
+            <state_interface name="position"/>
+        </joint>
+    </ros2_control>
+
+<gazebo>
+   <plugin filename="gz_ros2_control-system" name="gz_ros2_control::GazeboSimROS2ControlPlugin">
+      <parameters>${slambot_bringup_share}/config/slambot_controllers.yaml</parameters>
+   </plugin>
+</gazebo>
+
+</robot>

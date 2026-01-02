@@ -10,7 +10,7 @@ find_package(ament_cmake REQUIRED)
 find_package(rclcpp REQUIRED)
 
 install(
-  DIRECTORY launch config
+  DIRECTORY launch config worlds
   DESTINATION share/${PROJECT_NAME}/
 )
 

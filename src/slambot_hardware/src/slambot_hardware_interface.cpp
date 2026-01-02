@@ -172,17 +172,6 @@ hardware_interface::return_type SlambotHardwareInterface::read(
   const rclcpp::Time &, const rclcpp::Duration & period)
 {
 
-    // double left_vel = driver_->getVelocityRadianPerSec(left_motor_id_);
-    // double right_vel = -1.0 * driver_->getVelocityRadianPerSec(right_motor_id_);
-    // if (abs(left_vel) < 0.03) { left_vel = 0.0; }
-    // if (abs(right_vel) < 0.03) { right_vel = 0.0; }
-    // set_state("base_left_wheel_joint/velocity", left_vel);
-    // set_state("base_right_wheel_joint/velocity", right_vel);
-    // set_state("base_left_wheel_joint/position", get_state("base_left_wheel_joint/position") + left_vel * period.seconds());
-    // set_state("base_right_wheel_joint/position", get_state("base_right_wheel_joint/position") + right_vel * period.seconds());
-    // RCLCPP_INFO(get_logger(), "left vel: %lf, right vel: %lf, left pos: %lf, right pos: %lf",
-    //          left_vel, right_vel, get_state("base_left_wheel_joint/position"), get_state("base_right_wheel_joint/position"));
-   
   if (!comms_.connected())
     return hardware_interface::return_type::ERROR;
 
