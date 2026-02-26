@@ -6,6 +6,7 @@
   <xacro:include filename="${slambot_description_share}/urdf/materials.xacro"/>
   <xacro:include filename="${slambot_description_share}/urdf/slambot.ros2_control.xacro"/>
   <xacro:include filename="${slambot_description_share}/urdf/slambot_urdf.gazebo"/>
+  <!-- <xacro:include filename="${slambot_description_share}/urdf/sensors.xacro"/> -->
 
 <link name="base_footprint"/>
 

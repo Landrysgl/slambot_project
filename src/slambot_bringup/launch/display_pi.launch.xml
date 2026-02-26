@@ -6,8 +6,8 @@
    <let name="slambot_description_share"
        value="$(find-pkg-share slambot_description)" />
 
-   <!-- <let name="slambot_bringup_share"
-       value="$(find-pkg-share slambot_bringup)" /> -->
+   <let name="slambot_bringup_share"
+       value="$(find-pkg-share slambot_bringup)" />
 
   <!-- Chemin complet vers l'URDF -->
    <!-- <let name="urdf_path"
@@ -31,6 +31,14 @@
 
 
     <!-- <node pkg="joint_state_publisher_gui" exec="joint_state_publisher_gui"/> -->
+
+    <node pkg="slambot_diff_drive" exec="diff_drive_bridge_node" name="twist_bridge"/>
+
+    <node pkg="teleop_twist_joy" exec="teleop_node" name="teleop_twist_joy">
+      <remap from="joy" to="/commands"/>
+      <remap from="cmd_vel" to="/diff_drive_controller/cmd_vel1"/>
+    <param from="$(var slambot_bringup_share)/config/joy.yaml"/>
+    </node>
 
     <node pkg="rviz2" exec="rviz2" output="screen" 
           args="-d $(var rviz_config_file_path)"/>

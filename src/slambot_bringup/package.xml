@@ -8,6 +8,7 @@
   <license>TODO: License declaration</license>
 
   <exec_depend>slambot_description</exec_depend>
+  <exec_depend>slambot_diff_drive</exec_depend>
   <exec_depend>robot_state_publisher</exec_depend>
   <exec_depend>rviz2</exec_depend>
   <exec_depend>ros_gz_sim</exec_depend>

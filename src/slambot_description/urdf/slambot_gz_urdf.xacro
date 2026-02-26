@@ -4,7 +4,11 @@
                   value="$(find slambot_description)"/>
 
   <xacro:include filename="${slambot_description_share}/urdf/materials.xacro"/>
+  <xacro:include filename="${slambot_description_share}/urdf/common_properties.xacro"/>
   <xacro:include filename="${slambot_description_share}/urdf/slambot_urdf.gazebo"/>
+  <xacro:include filename="${slambot_description_share}/urdf/sensors.xacro"/>
+  <xacro:include filename="${slambot_description_share}/urdf/gz_plugins.xacro"/>
+
 
 <link name="base_footprint"/>
 
@@ -17,21 +21,20 @@
 <link name="base_link">
   <inertial>
     <origin xyz="0.005119635718873044 -0.00011101592777540043 0.08162335600373799" rpy="0 0 0"/>
-    <!-- <mass value="3.0305928330495275"/> -->
     <mass value="3.0305928330495275"/>
     <inertia ixx="0.013459" iyy="0.014737" izz="0.007942" ixy="5e-06" iyz="-2.9e-05" ixz="0.000775"/>
   </inertial>
   <visual>
     <origin xyz="0 0 0" rpy="0 0 0"/>
     <geometry>
-      <mesh filename="package://slambot_description/meshes/base_link.stl" scale="0.001 0.001 0.001"/>
+      <mesh filename="${slambot_description_share}/meshes/base_link.stl" scale="0.001 0.001 0.001"/>
     </geometry>
     <material name="silver"/>
   </visual>
   <collision>
     <origin xyz="0 0 0" rpy="0 0 0"/>
     <geometry>
-      <mesh filename="package://slambot_description/meshes/base_link.stl" scale="0.001 0.001 0.001"/>
+      <mesh filename="${slambot_description_share}/meshes/base_link.stl" scale="0.001 0.001 0.001"/>
     </geometry>
   </collision>
 </link>
@@ -45,14 +48,14 @@
   <visual>
     <origin xyz="-0.000388 -0.035625 -0.018348" rpy="0 0 0"/>
     <geometry>
-      <mesh filename="package://slambot_description/meshes/Wheel2_1.stl" scale="0.001 0.001 0.001"/>
+      <mesh filename="${slambot_description_share}/meshes/Wheel2_1.stl" scale="0.001 0.001 0.001"/>
     </geometry>
     <material name="silver"/>
   </visual>
   <collision>
     <origin xyz="-0.000388 -0.035625 -0.018348" rpy="0 0 0"/>
     <geometry>
-      <mesh filename="package://slambot_description/meshes/Wheel2_1.stl" scale="0.001 0.001 0.001"/>
+      <mesh filename="${slambot_description_share}/meshes/Wheel2_1.stl" scale="0.001 0.001 0.001"/>
     </geometry>
   </collision>
 </link>
@@ -66,14 +69,14 @@
   <visual>
     <origin xyz="-0.000387 0.036475 -0.018348" rpy="0 0 0"/>
     <geometry>
-      <mesh filename="package://slambot_description/meshes/Wheel1_1.stl" scale="0.001 0.001 0.001"/>
+      <mesh filename="${slambot_description_share}/meshes/Wheel1_1.stl" scale="0.001 0.001 0.001"/>
     </geometry>
     <material name="silver"/>
   </visual>
   <collision>
     <origin xyz="-0.000387 0.036475 -0.018348" rpy="0 0 0"/>
     <geometry>
-      <mesh filename="package://slambot_description/meshes/Wheel1_1.stl" scale="0.001 0.001 0.001"/>
+      <mesh filename="${slambot_description_share}/meshes/Wheel1_1.stl" scale="0.001 0.001 0.001"/>
     </geometry>
   </collision>
 </link>

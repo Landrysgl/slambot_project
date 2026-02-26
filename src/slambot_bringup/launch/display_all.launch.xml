@@ -32,6 +32,11 @@
 
     <!-- <node pkg="joint_state_publisher_gui" exec="joint_state_publisher_gui"/> -->
 
+    <!-- <node pkg="teleop_twist_joy" exec="teleop_node" name="teleop_twist_joy">
+      <remap from="joy" to="/commands"/>
+    <param from="$(var slambot_bringup_share)/config/joy.yaml"/>
+    </node> -->
+
     <node pkg="rviz2" exec="rviz2" output="screen" 
           args="-d $(var rviz_config_file_path)"/>
 

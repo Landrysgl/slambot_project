@@ -101,6 +101,10 @@ public:
     ss << "{ d1:" << val_1 << " , d2:" << val_2 << " }";
     send_msg(ss.str());
   }
+  void read_imu_values(int16_t &ax, int16_t &ay, int16_t &az, int16_t &gx, int16_t &gy, int16_t &gz)
+  {
+    std::string response = send_msg("imu\n");
+  }
 
 private:
     LibSerial::SerialPort serial_conn_;

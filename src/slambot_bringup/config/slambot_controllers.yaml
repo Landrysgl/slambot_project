@@ -8,6 +8,14 @@ controller_manager:
     diff_drive_controller:
       type: diff_drive_controller/DiffDriveController
 
+    # gps_sensor_broadcaster:
+    #   type: gps_sensor_broadcaster/GPSSensorBroadcaster
+
+    # imu_sensor_broadcaster:
+    #   type: imu_sensor_broadcaster/IMUSensorBroadcaster
+
+
+
 #     revolution_3_position_controller:
 #       type: forward_position_controller/ForwardPositionController
 
@@ -50,3 +58,16 @@ diff_drive_controller:
     linear.x.min_velocity: -1.0
     angular.z.max_velocity: 1.0
     angular.z.min_velocity: -1.0
+
+
+
+# gps_sensor_broadcaster:
+#    ros__parameters:
+#      sensor_name: "gps_link"
+#      frame_id: "gps_link"
+
+
+# imu_sensor_broadcaster:
+#   ros__parameters:
+#     sensor_name: "imu_link"
+#     frame_id: "imu_link"
