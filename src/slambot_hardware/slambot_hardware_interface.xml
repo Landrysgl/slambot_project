@@ -1,7 +1,0 @@
-<library path="slambot_hardware">
-<class name="slambot_hardware/slambotHardwareInterface" type="slambot_hardware::slambotHardwareInterface" base_class_type="hardware_interface::SystemInterface">
-<description>
-Hardware interface for a slambot motors
-</description>
-</class>
-</library>

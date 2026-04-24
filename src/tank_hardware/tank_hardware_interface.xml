@@ -1,0 +1,7 @@
+<library path="tank_hardware">
+<class name="tank_hardware/TankHardwareInterface" type="tank_hardware::TankHardwareInterface" base_class_type="hardware_interface::SystemInterface">
+<description>
+Hardware interface for a tank motors
+</description>
+</class>
+</library>

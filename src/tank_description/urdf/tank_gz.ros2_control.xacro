@@ -1,0 +1,233 @@
+<?xml version="1.0" ?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro" >
+
+  <xacro:property name="tank_description_share"
+                  value="$(find tank_description)"/>
+
+  <xacro:property name="tank_bringup_share"
+                  value="$(find tank_bringup)"/>
+
+
+ <ros2_control name="tank" type="system">
+        <hardware>
+            <plugin>gz_ros2_control/GazeboSimSystem</plugin>
+        </hardware>
+
+
+        <joint name="right_back_wheel_joint">
+            <command_interface name="velocity"/>
+            <state_interface name="velocity"/>
+            <state_interface name="position"/>
+        </joint>
+        
+        
+        <joint name="left_back_wheel_joint">
+            <command_interface name="velocity"/>
+            <state_interface name="velocity"/>
+            <state_interface name="position"/>
+        </joint>
+    </ros2_control>
+
+<gazebo reference="camera_link">
+   <sensor name="camera" type="camera">
+      <camera>
+         <horizontal_fov>1.3962634</horizontal_fov>
+         <image>
+            <width>640</width>
+            <height>480</height>
+            <format>R8G8B8</format>
+         </image>
+         <clip>
+            <near>0.1</near>
+            <far>15</far>
+         </clip>
+         <noise>
+            <type>gaussian</type>
+            <mean>0.0</mean>
+            <stddev>0.007</stddev>
+         </noise>
+         <optical_frame_id>camera_optical_link</optical_frame_id>
+         <camera_info_topic>camera/camera_info</camera_info_topic>
+      </camera>
+      <always_on>1</always_on>
+      <update_rate>60</update_rate>
+      <visualize>true</visualize>
+      <topic>camera/image_raw</topic>
+   </sensor>
+</gazebo>
+
+<gazebo reference="imu_link">
+  <sensor name="imu_sensor" type="imu">
+    <always_on>1</always_on>
+    <update_rate>100</update_rate>
+    <topic>imu</topic>
+  </sensor>
+</gazebo>
+
+
+<gazebo reference="gps_link">
+  <sensor name="gps_sensor" type="navsat">
+    <always_on>1</always_on>
+    <update_rate>50</update_rate>
+    <topic>gps</topic>
+    <gz_frame_id>gps_link</gz_frame_id>
+  </sensor>
+</gazebo>
+
+
+
+<gazebo reference="lidar_link">
+<sensor name="lidar_sensor" type="gpu_lidar">
+  <pose relative_to="lidar_link">0 0 0 0 0 0</pose>
+        <lidar>
+          <scan>
+            <horizontal>
+              <samples>1800</samples>
+              <resolution>1</resolution>
+              <min_angle>-3.1459</min_angle>
+              <max_angle>3.1459</max_angle>
+            </horizontal>
+            <vertical>
+              <samples>16</samples>
+              <resolution>1</resolution>
+              <min_angle>-0.261799</min_angle>
+              <max_angle>0.261799</max_angle>
+            </vertical>
+          </scan>
+          <range>
+            <min>0.05</min>
+            <max>100</max>
+            <resolution>0.01</resolution>
+          </range>
+          <noise>
+            <type>gaussian</type>
+            <mean>0</mean>
+            <stddev>0.01</stddev>
+          </noise>
+        </lidar>
+        <gz_frame_id>lidar_link</gz_frame_id>
+        <topic>scan</topic>
+        <visualize>true</visualize>
+        <update_rate>50</update_rate>
+      </sensor>
+</gazebo>
+
+<!-- <gazebo reference="lidar_link">
+  <sensor name="lidar_sensor" type="gpu_lidar">
+  <pose relative_to="lidar_link">0 0 0 0 0 0</pose>
+  <scan>
+      <horizontal>
+         <samples>640</samples>
+         <resolution>1</resolution>
+         <min_angle>-1.396263</min_angle>
+         <max_angle>1.396263</max_angle>
+      </horizontal>
+      <vertical>
+         <samples>1</samples>
+         <resolution>0.01</resolution>
+         <min_angle>0</min_angle>
+         <max_angle>0</max_angle>
+      </vertical>
+  </scan>
+  <range>
+      <min>0.08</min>
+      <max>10.0</max>
+      <resolution>0.01</resolution>
+  </range>
+    <always_on>1</always_on>
+    <visualize>true</visualize>
+    <update_rate>100</update_rate>
+    <topic>lidar</topic>
+  </sensor>
+</gazebo> -->
+
+
+<!-- 
+
+    <gazebo reference="imu_link">
+     <sensor name="imu_sensor" type="imu">
+        <always_on>1</always_on>
+        <update_rate>50</update_rate>
+        <imu>
+          <enable_orientation>0</enable_orientation>
+          <angular_velocity>
+            <x>
+              <noise type="gaussian">
+                <mean>0</mean>
+                <stddev>0.009</stddev>
+                <bias_mean>0.00075</bias_mean>
+                <bias_stddev>0.005</bias_stddev>
+                <dynamic_bias_stddev>0.00002</dynamic_bias_stddev>
+                <dynamic_bias_correlation_time>400.0</dynamic_bias_correlation_time>
+                <precision>0.00025</precision>
+              </noise>
+            </x>
+            <y>
+              <noise type="gaussian">
+                <mean>0</mean>
+                <stddev>0.009</stddev>
+                <bias_mean>0.00075</bias_mean>
+                <bias_stddev>0.005</bias_stddev>
+                <dynamic_bias_stddev>0.00002</dynamic_bias_stddev>
+                <dynamic_bias_correlation_time>400.0</dynamic_bias_correlation_time>
+                <precision>0.00025</precision>
+              </noise>
+            </y>
+            <z>
+              <noise type="gaussian">
+                <mean>0</mean>
+                <stddev>0.009</stddev>
+                <bias_mean>0.00075</bias_mean>
+                <bias_stddev>0.005</bias_stddev>
+                <dynamic_bias_stddev>0.00002</dynamic_bias_stddev>
+                <dynamic_bias_correlation_time>400.0</dynamic_bias_correlation_time>
+                <precision>0.00025</precision>
+              </noise>
+            </z>
+          </angular_velocity>
+          <linear_acceleration>
+            <x>
+              <noise type="gaussian">
+                <mean>0</mean>
+                <stddev>0.021</stddev>
+                <bias_mean>0.05</bias_mean>
+                <bias_stddev>0.0075</bias_stddev>
+                <dynamic_bias_stddev>0.000375</dynamic_bias_stddev>
+                <dynamic_bias_correlation_time>175.0</dynamic_bias_correlation_time>
+                <precision>0.005</precision>
+              </noise>
+            </x>
+            <y>
+              <noise type="gaussian">
+                <mean>0</mean>
+                <stddev>0.021</stddev>
+                <bias_mean>0.05</bias_mean>
+                <bias_stddev>0.0075</bias_stddev>
+                <dynamic_bias_stddev>0.000375</dynamic_bias_stddev>
+                <dynamic_bias_correlation_time>175.0</dynamic_bias_correlation_time>
+                <precision>0.005</precision>
+              </noise>
+            </y>
+            <z>
+              <noise type="gaussian">
+                <mean>0</mean>
+                <stddev>0.021</stddev>
+                <bias_mean>0.05</bias_mean>
+                <bias_stddev>0.0075</bias_stddev>
+                <dynamic_bias_stddev>0.000375</dynamic_bias_stddev>
+                <dynamic_bias_correlation_time>175.0</dynamic_bias_correlation_time>
+                <precision>0.005</precision>
+              </noise>
+            </z>
+          </linear_acceleration>
+        </imu>
+      </sensor>
+    </gazebo> -->
+
+<gazebo>
+   <plugin filename="gz_ros2_control-system" name="gz_ros2_control::GazeboSimROS2ControlPlugin">
+      <parameters>${tank_bringup_share}/config/tank_controllers.yaml</parameters>
+   </plugin>
+</gazebo>
+
+</robot>

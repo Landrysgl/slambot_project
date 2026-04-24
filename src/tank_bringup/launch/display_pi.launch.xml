@@ -1,0 +1,50 @@
+<launch>
+    <!-- <let name="urdf_path" 
+    value="$(find-pkg-share tank_description/urdf/tank_urdf.xacro)"/> -->
+   
+     <!-- Chemin vers le package -->
+   <let name="tank_description_share"
+       value="$(find-pkg-share tank_description)" />
+
+   <let name="tank_bringup_share"
+       value="$(find-pkg-share tank_bringup)" />
+
+  <!-- Chemin complet vers l'URDF -->
+   <!-- <let name="urdf_path"
+       value="$(var tank_description_share)/urdf/tank_urdf.xacro" /> -->
+
+  <let name="rviz_config_file_path" 
+       value="$(var tank_description_share)/rviz/slam_config.rviz"/>
+       
+   
+   <!-- <node pkg="robot_state_publisher" exec="robot_state_publisher">
+   <param name="robot_description" value="$(command 'xacro $(var urdf_path)')"/>
+   </node>
+
+    <node pkg="controller_manager" exec="ros2_control_node">
+    <param from="$(var tank_bringup_share)/config/tank_controllers.yaml"/>
+    </node>
+
+    <node pkg="controller_manager" exec="spawner" args="joint_state_broadcaster"/>
+
+    <node pkg="controller_manager" exec="spawner" args="diff_drive_controller"/> -->
+
+    <!-- <node pkg="controller_manager" exec="spawner" args="gps_sensor_broadcaster"/>
+
+    <node pkg="controller_manager" exec="spawner" args="imu_sensor_broadcaster"/> -->
+
+    <!-- <node pkg="joint_state_publisher_gui" exec="joint_state_publisher_gui"/> -->
+
+    <node pkg="teleop_twist_joy" exec="teleop_node" name="teleop_twist_joy">
+      <remap from="joy" to="/commands"/>
+      <remap from="cmd_vel" to="/diff_drive_controller/cmd_vel1"/>
+    <param from="$(var tank_bringup_share)/config/joy.yaml"/>
+    </node>
+
+    <node pkg="rviz2" exec="rviz2" output="screen" 
+          args="-d $(var rviz_config_file_path)"/>
+    
+
+    <!-- <node pkg="tank_diff_drive" exec="diff_drive_bridge_node" name="twist_bridge"/> -->
+
+</launch>

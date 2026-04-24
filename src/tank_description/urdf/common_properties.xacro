@@ -1,0 +1,151 @@
+<?xml version="1.0" ?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro" >
+
+<material name="silver">
+  <color rgba="0.700 0.700 0.700 1.000"/>
+</material>
+
+<material name="red">
+  <color rgba="1.000 0.000 0.000 1.000"/>
+</material>
+
+<material name="green">
+  <color rgba="0.000 1.000 0.000 1.000"/>
+</material>
+
+<material name="blue">
+  <color rgba="0.000 0.000 1.000 1.000"/>
+</material>
+
+<material name="white">
+  <color rgba="1.000 1.000 1.000 1.000"/>
+</material>
+
+<material name="black">
+  <color rgba="0.000 0.000 0.000 1.000"/>
+</material>
+
+
+
+<xacro:macro name="box_inertia" params="m x y z o_xyz o_rpy">
+    <inertial>
+        <origin xyz="${o_xyz}" rpy="${o_rpy}"/>
+        <mass value="${m}"/>
+        <inertia ixx="${(m/12)*(y**2 + z**2)}" ixy="0"                       ixz="0" 
+                                               iyy="${(m/12)*(x**2 + z**2)}" iyz="0" 
+                                                                             izz="${(m/12)*(y**2 + x**2)}"/>
+    </inertial>
+</xacro:macro>
+
+
+<xacro:macro name="cylinder_inertia" params="m radius length o_xyz o_rpy">
+    <inertial>
+        <origin xyz="${o_xyz}" rpy="${o_rpy}"/>
+        <mass value="${m}"/>
+        <inertia ixx="${(m/12)*(3*(radius**2) + length**2)}"                ixy="0"                                                  ixz="0" 
+                                                                            iyy="${(m/12)*(3*(radius**2) + length**2)}"              iyz="0" 
+                                                                                                                                     izz="${(m/2)*(radius**2)}"/>
+    </inertial>
+</xacro:macro>
+
+
+<xacro:macro name="sphere_inertia" params="m radius o_xyz o_rpy">
+    <inertial>
+        <origin xyz="${o_xyz}" rpy="${o_rpy}"/>
+        <mass value="${m}"/>
+        <inertia ixx="${2*(m/5)*(radius**2)}"                ixy="0"                             ixz="0" 
+                                                             iyy="${2*(m/5)*(radius**2)}"        iyz="0" 
+                                                                                                 izz="${2*(m/5)*(radius**2)}"/>
+    </inertial>
+</xacro:macro>
+
+
+
+<xacro:macro name="wheel_link" params="prefix visual_xyz visual_rpy">
+<link name="${prefix}_wheel_link">
+  <visual>
+    <origin xyz="${visual_xyz}" rpy="${visual_rpy}"/>
+    <geometry>
+      <cylinder radius="${wheel_radius}" length="${wheel_length}"/>
+    </geometry>
+    <material name="black"/>
+  </visual>
+  <collision>
+    <origin xyz="${visual_xyz}" rpy="${visual_rpy}"/>
+    <geometry>
+      <cylinder radius="${wheel_radius}" length="${wheel_length}"/>
+    </geometry>
+  </collision>
+  <xacro:sphere_inertia m="${wheel_mass}" radius="${wheel_radius}" o_xyz="${visual_xyz}" o_rpy="${visual_rpy}" />
+</link>
+</xacro:macro>
+
+
+<xacro:macro name="bar_link" params="prefix visual_xyz visual_rpy">
+<link name="${prefix}_bar_link">
+  <visual>
+    <origin xyz="${visual_xyz}" rpy="${visual_rpy}"/>
+    <geometry>
+      <cylinder radius="${bar_radius}" length="${bar_length}"/>
+    </geometry>
+    <material name="red"/>
+  </visual>
+  <collision>
+    <origin xyz="${visual_xyz}" rpy="${visual_rpy}"/>
+    <geometry>
+      <cylinder radius="${bar_radius}" length="${bar_length}"/>
+    </geometry>
+  </collision>
+  <xacro:cylinder_inertia m="${bar_mass}" radius="${bar_radius}" length="${bar_length}" o_xyz="${visual_xyz}" o_rpy="${visual_rpy}" />
+</link>
+</xacro:macro>
+
+
+<xacro:macro name="wheel_continuous_joint" params="link_name joint_name o_xyz o_rpy">
+<joint name="${joint_name}" type="continuous">
+  <origin xyz="${o_xyz}" rpy="${o_rpy}"/>
+  <parent link="base_link"/>
+  <child link="${link_name}"/>
+  <axis xyz="0.0 1.0 0.0"/>
+</joint>
+</xacro:macro>
+
+
+<xacro:macro name="wheel_fixed_joint" params="link_name joint_name o_xyz o_rpy">
+<joint name="${joint_name}" type="fixed">
+  <origin xyz="${o_xyz}" rpy="${o_rpy}"/>
+  <parent link="base_link"/>
+  <child link="${link_name}"/>
+</joint>
+</xacro:macro>
+
+
+<!-- <xacro:macro name="wheel_continuous_joint" params="link_name joint_name parent_joint_name o_xyz o_rpy">
+<joint name="${joint_name}" type="continuous">
+  <origin xyz="${o_xyz}" rpy="${o_rpy}"/>
+  <parent link="${parent_joint_name}"/>
+  <child link="${link_name}"/>
+  <axis xyz="0.0 1.0 0.0"/>
+</joint>
+</xacro:macro>
+
+
+<xacro:macro name="wheel_fixed_joint" params="link_name joint_name parent_joint_name o_xyz o_rpy">
+<joint name="${joint_name}" type="fixed">
+  <origin xyz="${o_xyz}" rpy="${o_rpy}"/>
+  <parent link="${parent_joint_name}"/>
+  <child link="${link_name}"/>
+</joint>
+</xacro:macro> -->
+
+
+<xacro:macro name="bar_joint" params="link_name joint_name o_xyz o_rpy">
+<joint name="${joint_name}" type="fixed">
+  <origin xyz="${o_xyz}" rpy="${o_rpy}"/>
+  <parent link="base_link"/>
+  <child link="${link_name}"/>
+</joint>
+</xacro:macro>
+
+
+</robot>
