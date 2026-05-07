@@ -3,8 +3,8 @@ teleop_twist_joy:
      enable_button: 0
      axis_linear.x: 1
      axis_angular.yaw: 3
-    #  scale_linear.x: 0.5
-    #  scale_angular.yaw: 1.5
+     scale_linear.x: 0.7
+     scale_angular.yaw: 1.5
      inverted_reverse: true
      publish_stamped_twist: false
     #  IF PUBLISH_STAMPED_TWIST IS ENABLED

@@ -1,0 +1,29 @@
+joy_node:
+  ros__parameters:
+    device_id: 0
+    deadzone: 0.05
+    autorepeat_rate: 20.0
+
+teleop_twist_joy_2:
+   ros__parameters:
+     enable_button: 4
+     enable_turbo_button: 5
+    #  axis_linear.x: 1
+    #  axis_angular.yaw: 0
+     axis_linear:
+      x: 1
+     scale_linear:
+      x: 0.5
+     scale_linear_turbo: 
+      x: 1.0
+     axis_angular:
+      yaw: 0
+     scale_angular:
+      yaw: -1.0
+     scale_angular_turbo: 
+      yaw: -1.5
+    #  inverted_reverse: false
+     publish_stamped_twist: false
+    #  IF PUBLISH_STAMPED_TWIST IS ENABLED
+     frame: 'joy'
+    #  IF PUBLISH_STAMPED_TWIST IS ENABLED

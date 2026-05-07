@@ -43,11 +43,21 @@
 
     <node pkg="controller_manager" exec="spawner" args="imu_sensor_broadcaster"/> -->
 
+    <node pkg="joy" exec="joy_node" name="primary_joy">
+    <remap from="joy" to="/commands2"/>
+    <param from="$(var tank_bringup_share)/config/joy2.yaml"/>
+    </node>
 
-    <node pkg="teleop_twist_joy" exec="teleop_node" name="teleop_twist_joy">
-    <remap from="joy" to="/commands"/>
+    <node pkg="teleop_twist_joy" exec="teleop_node" name="teleop_twist_joy_2">
+    <remap from="joy" to="/commands2"/>
+    <remap from="/cmd_vel" to="/cmd_vel2"/>
+    <param from="$(var tank_bringup_share)/config/joy2.yaml"/>
+    </node>
+
+     <node pkg="teleop_twist_joy" exec="teleop_node" name="teleop_twist_joy">
+    <remap from="joy" to="/commands1"/>
     <remap from="/cmd_vel" to="/cmd_vel1"/>
-    <param from="$(var tank_bringup_share)/config/joy.yaml"/>
+    <param from="$(var tank_bringup_share)/config/joy1.yaml"/>
     </node>
 
     <node pkg="twist_mux" exec="twist_mux" output="screen">

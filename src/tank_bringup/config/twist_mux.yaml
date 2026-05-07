@@ -10,7 +10,7 @@ twist_mux:
         topic   : cmd_vel1
         timeout : 0.5
         priority: 50
-      # joystick2:
-      #   topic   : cmd_vel2
-      #   timeout : 0.5
-      #   priority: 100
+      joystick2:
+        topic   : cmd_vel2
+        timeout : 0.5
+        priority: 100
