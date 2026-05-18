@@ -4,7 +4,7 @@
                   value="$(find tank_description)"/>
 
   <xacro:include filename="${tank_description_share}/urdf/tank.ros2_control.xacro"/>
-  <xacro:include filename="${tank_description_share}/urdf/tank.common_properties.xacro"/>
+  <xacro:include filename="${tank_description_share}/urdf/common_properties.xacro"/>
   <xacro:include filename="${tank_description_share}/urdf/sensors.xacro"/>
 
   <xacro:property name="wheel_mass" value="5"/> 

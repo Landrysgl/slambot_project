@@ -1,0 +1,104 @@
+<launch>
+
+     <!-- Chemin vers le package -->
+   <let name="tank_description_share"
+       value="$(find-pkg-share tank_description)" />
+
+   <let name="tank_bringup_share"
+       value="$(find-pkg-share tank_bringup)" />
+
+  <!-- Chemin complet vers l'URDF -->
+   <let name="urdf_path"
+       value="$(var tank_description_share)/urdf/tank_urdf.xacro" />
+
+  <let name="rviz_config_file_path" 
+       value="$(var tank_description_share)/rviz/slam_config.rviz"/>
+       
+       
+
+   <node pkg="robot_state_publisher" exec="robot_state_publisher">
+   <param name="robot_description" value="$(command 'xacro $(var urdf_path)')"/>
+   </node>
+
+    <node pkg="controller_manager" exec="ros2_control_node">
+    <param from="$(var tank_bringup_share)/config/tank_controllers.yaml"/>
+    </node>
+
+    <node pkg="controller_manager" exec="spawner" args="joint_state_broadcaster"/>
+
+    <node pkg="controller_manager" exec="spawner" args="diff_drive_controller"/>
+
+    <!-- <node pkg="controller_manager" exec="spawner" args="gps_sensor_broadcaster"/>
+
+    <node pkg="controller_manager" exec="spawner" args="imu_sensor_broadcaster"/> -->
+
+    <node pkg="joy" exec="joy_node" name="primary_joy">
+    <remap from="joy" to="/commands2"/>
+    <param from="$(var tank_bringup_share)/config/joy2.yaml"/>
+    </node>
+
+    <node pkg="teleop_twist_joy" exec="teleop_node" name="teleop_twist_joy_2">
+    <remap from="joy" to="/commands2"/>
+    <remap from="/cmd_vel" to="/cmd_vel2"/>
+    <param from="$(var tank_bringup_share)/config/joy2.yaml"/>
+    </node>
+
+     <node pkg="teleop_twist_joy" exec="teleop_node" name="teleop_twist_joy">
+    <remap from="joy" to="/commands1"/>
+    <remap from="/cmd_vel" to="/cmd_vel1"/>
+    <param from="$(var tank_bringup_share)/config/joy1.yaml"/>
+    </node>
+
+    <!-- <node pkg="twist_mux" exec="twist_mux" output="screen">
+    <remap from="/cmd_vel_out" to="/cmd_vel_unstamped"/>
+    <param name="use_sim_time" value="true"/>
+    <param from="$(var tank_bringup_share)/config/twist_mux.yaml" />
+    </node>
+
+    <node pkg="twist_stamper" exec="twist_stamper">
+    <param name="frame_id" value=""/>
+    <remap from="/cmd_vel_in" to="/cmd_vel_unstamped"/>
+    <remap from="/cmd_vel_out" to="/diff_drive_controller/cmd_vel"/>
+    </node> -->
+
+    <!-- <node pkg="twist_stamper" exec="twist_stamper">
+    <param name="frame_id" value=""/>
+    <remap from="/cmd_vel_in" to="/cmd_vel"/>
+    <remap from="/cmd_vel_out" to="/diff_drive_controller/cmd_vel"/>
+    </node> -->
+
+
+  <!-- Ajout des launch files python -->
+
+   <!-- ONLY FOR MAPPING -->
+   <!-- <include file="$(var tank_bringup_share)/launch/online_async_launch.py">
+   <arg name="use_sim_time" value="true"/>
+   <arg name="params_file" value="$(var tank_bringup_share)/config/mapper_params_online_async.yaml" />
+   </include> -->
+   <!-- ONLY FOR MAPPING -->
+
+
+   <!-- ONE OF THE OPTIONS FOR LOCALIZATION -->
+   <!-- <include file="$(var tank_bringup_share)/launch/second_loc/localization_launch.py">
+   <arg name="use_sim_time" value="true"/>
+   <arg name="slam_params_file" value="$(var tank_bringup_share)/config/mapper_params_localization.yaml" />
+   </include> -->
+   <!-- ONE OF THE OPTIONS FOR LOCALIZATION -->
+
+
+   <!-- ONE OF THE OPTIONS FOR LOCALIZATION -->
+   <!-- <include file="$(var tank_bringup_share)/launch/localization_launch.py">
+   <arg name="map" value="/home/eldry/devros_ws/map.yaml"/>
+   <arg name="use_sim_time" value="true"/>
+   </include> -->
+   <!-- ONE OF THE OPTIONS FOR LOCALIZATION -->
+
+<!-- 
+   <include file="$(var tank_bringup_share)/launch/navigation_launch.py">
+   <arg name="use_sim_time" value="true"/>
+   </include> -->
+
+       <node pkg="rviz2" exec="rviz2" output="screen" 
+          args="-d $(var rviz_config_file_path)"/>
+
+</launch>

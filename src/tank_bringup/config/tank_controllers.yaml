@@ -1,6 +1,6 @@
 controller_manager:
   ros__parameters:
-    update_rate: 1000
+    update_rate: 100
 
     joint_state_broadcaster:
       type: joint_state_broadcaster/JointStateBroadcaster
@@ -34,7 +34,7 @@ diff_drive_controller:
 
     enable_odom_tf: true
 
-    publish_rate: 200.0
+    publish_rate: 100.0
  
     linear.x.max_velocity: 1.0
     linear.x.min_velocity: -1.0
